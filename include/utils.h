@@ -14,7 +14,7 @@
 using ISP {
     template <typename T>
 	class UTILS
-				{
+			{
 				public:
                     static void multi(T* C, const T* A, const T* B);
                     static void add(T* C, const T* A, const T* B);
@@ -23,15 +23,11 @@ using ISP {
                     static void invert(T* dst, const T* src);
                     static void transpose(T* dst, const T* src);
                     static void print(const T* C, const char* head = "Matrix:");
-
                     static void mulPerLine(T* C, const T* A, const T* Line);
-
                     static std::shared_ptr<Tensor> polyMulti(std::shared_ptr<T> A, std::shared_ptr<T> B);
-
-                    // the determinant of the matrix
                     static float matDet(const T* A);
 
-				};
+			};
 
 	 
 } / namespace ISP
