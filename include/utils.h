@@ -13,7 +13,7 @@
 #include<memory>
 using ISP {
     template <typename T>
-    class UTILS
+    class Utils
 		{
 		public:
                     static void multi(T* C, const T* A, const T* B);
