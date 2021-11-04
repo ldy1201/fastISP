@@ -11,8 +11,8 @@
 #include <cmath>
 #include <stdio.h>
 #include<memory>
-using ISP {
-    template <typename T>
+#include "../include/imageMat.h"
+namespace ISP {
     class Utils
 		{
 		public:

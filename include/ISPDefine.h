@@ -20,6 +20,7 @@
 #define ROUND_UP(x, y) (((x) + (y) - (1)) / (y) * (y))
 #define GN_UP4(x) ROUND_UP((x), 4)
 #define GN_UP8(x) ROUND_UP((x), 8)
+#define ISP_USE_NEON 0x1
 
 #define ISP_ASSERT(x)                                            \
     {                                                            \

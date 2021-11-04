@@ -3,9 +3,9 @@
 #include<cmath>
 #include<arm_neon.h>
 
-using namespace ISP {
+ namespace ISP {
 
-    void Utils::multi(Tensor* C, const Tensor* A, const Tensor* B) {
+    void Utils::multi(T* C, const T* A, const T* B) {
         ISP_ASSERT(NULL != C);
         ISP_ASSERT(NULL != B);
         ISP_ASSERT(NULL != A);
@@ -33,7 +33,7 @@ using namespace ISP {
             int x = 0;
             const auto aLine = a + y * aw;
             auto cLine = c + y * cw;
-#ifdef MNN_USE_NEON
+#ifdef ISP_USE_NEON
             // firstly, compute 16 together
             for (; x <= w - 16; x += 16) {
                 auto bColumn = b + x;
@@ -106,7 +106,7 @@ using namespace ISP {
             auto b = B->host<float>() + y * bOffset;
             auto c = C->host<float>() + y * C->stride(0);
             int i = 0;
-#ifdef MNN_USE_NEON
+#ifdef ISP_USE_NEON
             for (; i <= size - 16; i += 16) {
                 float32x4_t a0 = vld1q_f32(a + i);
                 float32x4_t a1 = vld1q_f32(a + i + 4);
@@ -162,7 +162,7 @@ using namespace ISP {
             auto b = B->host<float>() + y * bw;
             auto c = C->host<float>() + y * cw;
             int i = 0;
-#ifdef MNN_USE_NEON
+#ifdef ISP_USE_NEON
             for (; i <= width - 16; i += 16) {
                 float32x4_t a0 = vld1q_f32(a + i);
                 float32x4_t a1 = vld1q_f32(a + i + 4);
