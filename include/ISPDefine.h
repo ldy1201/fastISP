@@ -13,6 +13,13 @@
 #define ISP_PRINT(format, ...) printf(format, ##__VA_ARGS__)
 #define ISP_ERROR(format, ...) printf(format, ##__VA_ARGS__)
 
+#define MIN(x, y) ((x) < (y) ? (x) : (y))
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
+
+#define UP_DIV(x, y) (((x) + (y) - (1)) / (y))
+#define ROUND_UP(x, y) (((x) + (y) - (1)) / (y) * (y))
+#define GN_UP4(x) ROUND_UP((x), 4)
+#define GN_UP8(x) ROUND_UP((x), 8)
 
 #define ISP_ASSERT(x)                                            \
     {                                                            \
