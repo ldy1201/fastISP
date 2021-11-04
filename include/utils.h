@@ -13,9 +13,9 @@
 #include<memory>
 using ISP {
     template <typename T>
-	class UTILS
-			{
-				public:
+    class UTILS
+		{
+		public:
                     static void multi(T* C, const T* A, const T* B);
                     static void add(T* C, const T* A, const T* B);
                     static void dot(T* C, const T* A, const T* B);
@@ -27,8 +27,8 @@ using ISP {
                     static std::shared_ptr<Tensor> polyMulti(std::shared_ptr<T> A, std::shared_ptr<T> B);
                     static float matDet(const T* A);
 
-			};
+		};
 
 	 
-} / namespace ISP
+} // namespace ISP
 #endif // !__UTILS_H__
